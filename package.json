@@ -1,0 +1,52 @@
+{
+  "name": "vite-h5-template",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:dev": "vite build --mode development",
+    "build:test": "vite build --mode test",
+    "build:prod": "vite build --mode production",
+    "preview": "vite preview",
+    "eslint": "eslint --ext .js,.vue, src --fix",
+    "prettier": "prettier .  --write"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "npm run eslint",
+      "npm run prettier"
+    ],
+    "*.{css,less,scss,json}": [
+      "npm run prettier"
+    ]
+  },
+  "dependencies": {
+    "amfe-flexible": "^2.2.1",
+    "axios": "^1.3.6",
+    "pinia": "^2.0.34",
+    "vant": "^4.2.0",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.11.0",
+    "husky": "^8.0.3",
+    "less": "^4.1.3",
+    "lint-staged": "^13.2.1",
+    "postcss-pxtorem": "^6.0.0",
+    "prettier": "^2.8.7",
+    "terser": "^5.17.1",
+    "vite": "^4.2.0",
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-vconsole": "^1.3.1"
+  }
+}

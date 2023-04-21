@@ -1,0 +1,127 @@
+// flex
+.flex-box {
+  display: flex;
+}
+.flex {
+  display: block;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-flex-basis: 0;
+  flex-basis: 0;
+}
+.b-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.b-v-center {
+  display: flex;
+  align-items: center;
+}
+.b-t-center {
+  display: flex;
+  justify-content: center;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.direction {
+  flex-direction: column;
+}
+.between {
+  justify-content: space-between;
+}
+// ellipsis
+.ell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ell2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.ellipsis {
+  width: auto;
+  white-space: nowrap;
+  word-wrap: normal;
+  .ell();
+}
+.ellipsis2 {
+  .ell();
+  .ell2();
+  -webkit-line-clamp: 2;
+}
+.ellipsis3 {
+  .ell();
+  .ell2();
+  -webkit-line-clamp: 3;
+}
+// 文字
+.tc {
+  text-align: center;
+}
+.tr {
+  text-align: right;
+}
+.tl {
+  text-align: left;
+}
+// float
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+// 字体大小
+.font-size(@size:@font-size-base) {
+  font-size: @size;
+}
+// 边框
+.border(@width:1px,@color:@border-color-base) {
+  border: @width solid @color;
+}
+//圆角
+.radius(@r:@border-radius-base) {
+  -webkit-border-radius: @r;
+  -moz-border-radius: @r;
+  border-radius: @r;
+}
+// 背景图片,.bg("..images/1.png");
+.bg(@url) {
+  background: url(@url) no-repeat center;
+  background-size: 100% 100%;
+}
+// 清除
+.clearfix() {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: '';
+  }
+  &:after {
+    clear: both;
+  }
+}
+// 上下左右居中
+.pos-box-cc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+//文字垂直居中
+.l-h(@h) {
+  text-align: center;
+  line-height: @h;
+}
+// 按钮
+.btn-common(@bgColor:@theme-color,@br:@border-radius-base,@ptb:3px,@plr:8px) {
+  border-radius: @br;
+  background: @bgColor;
+  color: #fff;
+  padding: @ptb @plr;
+}
