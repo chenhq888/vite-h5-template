@@ -1,10 +1,11 @@
-<script setup>
-import HelloWorld from '@components/HelloWorld'
-</script>
+<script setup></script>
 
 <template>
-  <div>App</div>
-  <hello-world></hello-world>
+  <router-view v-slot="{ Component }">
+    <keep-alive :include="cachedViews">
+      <component :is="Component" />
+    </keep-alive>
+  </router-view>
 </template>
 
 <style scoped lang="less"></style>

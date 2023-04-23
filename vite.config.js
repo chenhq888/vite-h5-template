@@ -1,8 +1,9 @@
 import { defineConfig, loadEnv } from 'vite'
-import { createHtmlPlugin } from 'vite-plugin-html'
-import vue from '@vitejs/plugin-vue'
-import { resolve } from 'path'
+
+import { createVitePlugins } from "./build/plugins"
 import proxy from './build/proxy'
+
+import { resolve } from 'path'
 
 const pathResolve = pathStr => resolve(__dirname, pathStr)
 
@@ -54,6 +55,7 @@ export default defineConfig(({ mode }) => {
         }
       }
     },
-    plugins: [vue(), createHtmlPlugin()]
+    plugins: createVitePlugins(env)
+    // plugins: [vue(), createHtmlPlugin()]
   }
 })
